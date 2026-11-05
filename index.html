@@ -33,6 +33,10 @@
         <div class="collage-tile"><img src=images/collage-10.jpg></div>
         <div class="collage-tile"><img src=images/collage-11.jpg></div>
         <div class="collage-tile"><img src=images/collage-12.jpg></div>
+        <!-- Replace these three placeholder photographs with your own JPGs. -->
+        <div class="collage-tile"><img src="images/collage-13.jpg" alt=""></div>
+        <div class="collage-tile"><img src="images/collage-14.jpg" alt=""></div>
+        <div class="collage-tile"><img src="images/collage-15.jpg" alt=""></div>
       </div>
     </div>
     <div class="hero-shade"></div>
@@ -44,12 +48,14 @@
       <div class="actions"><a class="btn primary" href="#work">Explore Our Work</a><a class="btn" href="contact.html">Partner With Us</a></div>
     </div>
   </section>
-  <!-- LAST EVENT IMAGE: change src to images/last-event.jpg after adding your photograph -->
-  <section class="event-feature container" aria-label="Latest Monalisaa House event">
-    <div class="image hero-image">
-      <img src=images/hero.jpg>
-      <span class="image-label">Photograph from our last event</span>
-    </div>
+  <!-- Replace videos/latest-event.mp4 with your event film; keep the existing photo as its poster. -->
+  <section class="event-feature container" aria-labelledby="latest-event-title">
+    <div class="section-label">Latest event</div>
+    <h2 id="latest-event-title" class="sr-only">Our latest gathering</h2>
+    <video class="film film-cinematic" controls playsinline preload="none" poster="images/hero.jpg" aria-label="Latest Monalisaa House event film">
+      <source src="videos/latest-event.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="videos/latest-event.mp4">Download the latest event film</a>.
+    </video>
   </section>
 
   <section id="house" class="container">
@@ -87,6 +93,25 @@
       <article class="work-item"><span class="num">02</span><h3>Artisan Collaborations</h3><p>Partnerships that make room for South Asian women artisans, craft knowledge, contemporary ideas, and new markets.</p></article>
       <article class="work-item"><span class="num">03</span><h3>Export & Trade</h3><p>Practical pathways that help craft-led businesses meet international markets with care.</p></article>
       <article class="work-item"><span class="num">04</span><h3>Cultural Exchange</h3><p>Conversations and projects connecting communities, institutions, and markets across the U.S. and South Asia.</p></article>
+    </div>
+  </section>
+
+  <section class="container popup-experiences" aria-labelledby="popup-title">
+    <div class="section-label">In the room</div>
+    <h2 id="popup-title">Pop-up Experiences</h2>
+    <div class="video-collage">
+      <video class="film" controls playsinline preload="none" poster="images/exhibition.jpg" aria-label="Pop-up experience 1">
+        <source src="videos/pop-up-01.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="videos/pop-up-01.mp4">Download pop-up experience 1</a>.
+      </video>
+      <video class="film" controls playsinline preload="none" poster="images/collage-04.jpg" aria-label="Pop-up experience 2">
+        <source src="videos/pop-up-02.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="videos/pop-up-02.mp4">Download pop-up experience 2</a>.
+      </video>
+      <video class="film" controls playsinline preload="none" poster="images/collage-10.jpg" aria-label="Pop-up experience 3">
+        <source src="videos/pop-up-03.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="videos/pop-up-03.mp4">Download pop-up experience 3</a>.
+      </video>
     </div>
   </section>
 
