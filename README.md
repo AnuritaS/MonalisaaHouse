@@ -24,12 +24,12 @@ The included JPGs and short MP4s are working placeholders; no HTML edits are nee
 | Homepage hero, new photograph 3 | `images/collage-15.jpg` |
 
 Export MP4s with H.264 video and AAC audio for browser compatibility. Landscape
-footage is recommended for homepage and Our Story players, which use fixed
-150 × 100 pixel frames and native controls. Those videos play only when visitors
+footage suits the homepage pop-up players (360 × 240 pixels); portrait footage
+suits Our Story (150 × 267 pixels). Both use native controls. Those videos play only when visitors
 choose, with `preload="none"`. Cultural Diplomacy backgrounds use portrait
 footage, muted autoplay, and existing photos as posters.
 
-The homepage pop-up players use fixed 150 × 100 pixel frames that wrap
+The homepage pop-up players use 360 × 240 pixel frames (responsive on phones) that wrap
 onto another row on narrow screens. Their dimensions stay unchanged during playback.
 The three new hero JPG placeholders are decorative, like the existing hero photos.
 
@@ -40,4 +40,11 @@ Cultural Diplomacy uses three muted, looping, autoplay background films in 9:16
 portrait frames (side by side on desktop, vertically arranged on phones). The
 section is taller, with a dark overlay for readable text and a pause/play button.
 Reduced-motion preferences start the films paused. Browsers that block autoplay
-continue showing the existing poster photos. Our Story remains 150 × 100 pixels.
+continue showing the existing poster photos. Our Story uses a 150 × 267 pixel portrait frame.
+
+Hero photos use optimized, fingerprinted WebP copies and a service worker that
+caches only those images. Originals are preserved. After uploading new collage
+JPGs, install Pillow (`python -m pip install Pillow`) and run
+`python scripts/optimize-hero.py`, then commit the generated images, index.html,
+and hero-assets.js. Changed filenames refresh the cache automatically; HTML and
+videos are never stored by this service worker. Caching requires HTTPS or localhost.
