@@ -6,7 +6,7 @@
   <meta name="description" content="The Monalisaa House explores artisan livelihoods, women's economic opportunity, worker dignity, animal welfare, entrepreneurship, and cultural exchange.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=fixed-media-2">
+  <link rel="stylesheet" href="style.css?v=portrait-background-3">
 </head>
 <body class="impact-page">
 <header><div class="container"><nav>
@@ -38,26 +38,25 @@
     </div>
   </section>
 
-  <section class="dark">
-    <div class="container">
-      <div class="eyebrow">Cultural diplomacy</div>
-      <h2>Culture can create the conversations that policy continues.</h2>
-      <p>Monalisaa House uses fashion, jewelry, craft, and cultural programming as entry points for conversations about women's economic participation, worker dignity, ethical production, animal welfare, entrepreneurship, and U.S.–South Asia exchange.</p>
-      <p>We do not claim to perform diplomacy. We create considered spaces where people from different communities, institutions, and markets come together.</p>
-      <div class="diplomacy-videos" aria-label="Cultural diplomacy films">
-        <video class="film" width="150" height="100" controls playsinline preload="none" poster="images/culture.jpg" aria-label="Cultural diplomacy film 1">
+  <section class="dark diplomacy-scene" aria-labelledby="diplomacy-title">
+      <div class="diplomacy-background" aria-hidden="true">
+        <video class="background-film" width="150" height="267" autoplay muted loop playsinline preload="metadata" tabindex="-1" poster="images/culture.jpg">
           <source src="videos/cultural-diplomacy-01.mp4" type="video/mp4">
-          Your browser does not support embedded video. <a href="videos/cultural-diplomacy-01.mp4">Download cultural diplomacy film 1</a>.
         </video>
-        <video class="film" width="150" height="100" controls playsinline preload="none" poster="images/exhibition.jpg" aria-label="Cultural diplomacy film 2">
+        <video class="background-film" width="150" height="267" autoplay muted loop playsinline preload="metadata" tabindex="-1" poster="images/exhibition.jpg">
           <source src="videos/cultural-diplomacy-02.mp4" type="video/mp4">
-          Your browser does not support embedded video. <a href="videos/cultural-diplomacy-02.mp4">Download cultural diplomacy film 2</a>.
         </video>
-        <video class="film" width="150" height="100" controls playsinline preload="none" poster="images/collage-04.jpg" aria-label="Cultural diplomacy film 3">
+        <video class="background-film" width="150" height="267" autoplay muted loop playsinline preload="metadata" tabindex="-1" poster="images/collage-04.jpg">
           <source src="videos/cultural-diplomacy-03.mp4" type="video/mp4">
-          Your browser does not support embedded video. <a href="videos/cultural-diplomacy-03.mp4">Download cultural diplomacy film 3</a>.
         </video>
       </div>
+    <div class="diplomacy-shade" aria-hidden="true"></div>
+    <div class="container diplomacy-copy">
+      <div class="eyebrow">Cultural diplomacy</div>
+      <h2 id="diplomacy-title">Culture can create the conversations that policy continues.</h2>
+      <p>Monalisaa House uses fashion, jewelry, craft, and cultural programming as entry points for conversations about women's economic participation, worker dignity, ethical production, animal welfare, entrepreneurship, and U.S.–South Asia exchange.</p>
+      <p>We do not claim to perform diplomacy. We create considered spaces where people from different communities, institutions, and markets come together.</p>
+      <button class="btn diplomacy-toggle" type="button" aria-pressed="false">Pause background videos</button>
     </div>
   </section>
 
@@ -126,5 +125,25 @@
     <div class="legal-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="cookies.html">Cookie Policy</a></div>
   </div>
 </div></footer>
+<script>
+(() => {
+  const videos = [...document.querySelectorAll('.background-film')];
+  const button = document.querySelector('.diplomacy-toggle');
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = motion.matches;
+  function update() {
+    videos.forEach(video => {
+      video.muted = true;
+      if (paused) video.pause();
+      else video.play().catch(() => {});
+    });
+    button.textContent = paused ? 'Play background videos' : 'Pause background videos';
+    button.setAttribute('aria-pressed', String(paused));
+  }
+  button.addEventListener('click', () => { paused = !paused; update(); });
+  motion.addEventListener('change', event => { paused = event.matches; update(); });
+  update();
+})();
+</script>
 </body>
 </html>

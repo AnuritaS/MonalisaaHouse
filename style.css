@@ -150,9 +150,7 @@ body.home-page .hero-collage .collage-tile:nth-child(15){grid-column:span 2}
 .hero-collage h1{font-size:clamp(44px,7.5vw,96px);margin:12px 0 16px}
 .hero-collage .lede{font-size:16px;line-height:1.5;margin:12px 0;max-width:580px}
 .hero-collage .actions{margin-top:18px}
-.diplomacy-videos{display:flex;flex-wrap:wrap;gap:16px;margin-top:30px}
 @media(max-width:800px){
- .diplomacy-videos{grid-template-columns:1fr}
  .about-story .history-grid{gap:30px}
  .story-film{max-width:480px}
 }
@@ -189,4 +187,24 @@ body.home-page .hero-collage{min-height:clamp(352px,41.6vw,480px);padding:25px 0
 @media(max-height:700px){
  body.home-page .hero-collage{padding:10px 0}
  .hero-collage h1{font-size:clamp(28px,7svh,48px)}
+}
+
+/* Portrait films are decorative backdrops; regular players retain fixed sizes. */
+.diplomacy-scene{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;min-height:900px;padding:90px 0;background:var(--ink)}
+.diplomacy-background{position:absolute;inset:0;z-index:-3;display:flex;align-items:center;justify-content:center;gap:16px;pointer-events:none}
+.background-film{display:block;flex:0 0 auto;width:calc((100% - 32px)/3);max-width:380px;height:auto;aspect-ratio:9/16;object-fit:cover;background:var(--ink)}
+.diplomacy-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(20,14,12,.87),rgba(20,14,12,.65));pointer-events:none}
+.diplomacy-copy{position:relative}
+.diplomacy-copy .eyebrow{color:#e8cfaa}
+.diplomacy-copy p{color:#f5eee5}
+.diplomacy-toggle{margin-top:20px;border-color:var(--cream);color:var(--cream);background:transparent;cursor:pointer}
+@media(max-width:800px){
+ .diplomacy-scene{min-height:1050px}
+ .diplomacy-background{gap:8px}
+ .background-film{width:calc((100% - 16px)/3)}
+}
+@media(max-width:480px){
+ .diplomacy-background{flex-direction:column;gap:8px}
+ .background-film{width:200px;max-width:65%;height:auto;aspect-ratio:9/16}
+ .diplomacy-scene{min-height:1200px;padding:90px 0}
 }

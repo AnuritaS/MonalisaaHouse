@@ -24,13 +24,20 @@ The included JPGs and short MP4s are working placeholders; no HTML edits are nee
 | Homepage hero, new photograph 3 | `images/collage-15.jpg` |
 
 Export MP4s with H.264 video and AAC audio for browser compatibility. Landscape
-footage is recommended; players use a fixed 150 × 100 pixel frame. Videos have native playback, volume, and fullscreen
-controls and play only when visitors choose. Existing photos remain as posters;
-`preload="none"` avoids downloading all seven films on page load.
+footage is recommended for homepage and Our Story players, which use fixed
+150 × 100 pixel frames and native controls. Those videos play only when visitors
+choose, with `preload="none"`. Cultural Diplomacy backgrounds use portrait
+footage, muted autoplay, and existing photos as posters.
 
-The pop-up and Cultural Diplomacy players use small fixed frames that wrap
+The homepage pop-up players use fixed 150 × 100 pixel frames that wrap
 onto another row on narrow screens. Their dimensions stay unchanged during playback.
 The three new hero JPG placeholders are decorative, like the existing hero photos.
 
 Our Story stays beside the story text on desktop and mobile.
 The latest event is a photograph only; `videos/latest-event.mp4` is no longer used.
+
+Cultural Diplomacy uses three muted, looping, autoplay background films in 9:16
+portrait frames (side by side on desktop, vertically arranged on phones). The
+section is taller, with a dark overlay for readable text and a pause/play button.
+Reduced-motion preferences start the films paused. Browsers that block autoplay
+continue showing the existing poster photos. Our Story remains 150 × 100 pixels.
