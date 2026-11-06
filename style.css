@@ -226,6 +226,8 @@ body.home-page .hero-collage{min-height:clamp(352px,41.6vw,480px);padding:25px 0
 .work-scene .work-item p{color:#f5eee5}
 .work-scene .work-grid,.work-scene .work-item{border-color:rgba(244,239,231,.35)}
 /* Reduce story typography by 20% and keep copy within its column. */
-.about-story .history-copy{font-size:clamp(19.2px,2.4vw,28px);overflow-wrap:anywhere}
+.about-story .history-copy,.about-story .story-caption{font-size:clamp(19.2px,2.4vw,28px);overflow-wrap:anywhere}
 .about-story .story-heading h2{font-size:clamp(35.2px,4.8vw,60.8px)}
-@media(max-width:800px){.about-story .history-copy{font-size:16px}}
+@media(max-width:800px){.about-story .history-copy,.about-story .story-caption{font-size:16px}}
+
+.story-caption{font-family:"Cormorant Garamond",serif;line-height:1.25;margin:20px 0 0}
