@@ -23,24 +23,23 @@ The included JPGs and short MP4s are working placeholders; no HTML edits are nee
 | Homepage hero, new photograph 2 | `images/collage-14.jpg` |
 | Homepage hero, new photograph 3 | `images/collage-15.jpg` |
 
-Export MP4s with H.264 video and AAC audio for browser compatibility. Landscape
-footage suits the homepage pop-up players (360 × 240 pixels); portrait footage
-suits Our Story (150 × 267 pixels). Both use native controls. Those videos play only when visitors
-choose, with `preload="none"`. Cultural Diplomacy backgrounds use portrait
-footage, muted autoplay, and existing photos as posters.
+Export MP4s with H.264 video and AAC audio for browser compatibility. Portrait
+footage suits the homepage pop-up players (180 × 320 pixels); landscape footage
+suits Our Story (up to 850 × 480 pixels). Both use native controls. Our Story plays on demand; pop-ups autoplay muted with native pause controls. Cultural Diplomacy backgrounds use portrait
+footage, muted autoplay, and video-derived covers.
 
-The homepage pop-up players use 360 × 240 pixel frames (responsive on phones) that wrap
-onto another row on narrow screens. Their dimensions stay unchanged during playback.
+The homepage pop-up players use 180 × 320 pixel portrait frames that wrap
+onto another row on narrow screens. They autoplay muted, loop, and retain their dimensions during playback.
 The three new hero JPG placeholders are decorative, like the existing hero photos.
 
-Our Story stays beside the story text on desktop and mobile.
+Our Story sits beside the text on large screens and below it on smaller screens.
 The latest event is a photograph only; `videos/latest-event.mp4` is no longer used.
 
 Cultural Diplomacy uses three muted, looping, autoplay background films in 9:16
 portrait frames (side by side on desktop, vertically arranged on phones). The
 section is taller, with a dark overlay for readable text and a pause/play button.
 Reduced-motion preferences start the films paused. Browsers that block autoplay
-continue showing the existing poster photos. Our Story uses a 150 × 267 pixel portrait frame.
+continue showing the video-derived cover images. Our Story uses a responsive landscape frame up to 850 × 480 pixels.
 
 Hero photos use optimized, fingerprinted WebP copies and a service worker that
 caches only those images. Originals are preserved. After uploading new collage
@@ -48,3 +47,8 @@ JPGs, install Pillow (`python -m pip install Pillow`) and run
 `python scripts/optimize-hero.py`, then commit the generated images, index.html,
 and hero-assets.js. Changed filenames refresh the cache automatically; HTML and
 videos are never stored by this service worker. Caching requires HTTPS or localhost.
+
+Video cover images are extracted at the one-second mark from their own MP4s.
+After replacing a video, run `python scripts/video-posters.py` (requires ffmpeg)
+and commit the generated covers and updated HTML. Fingerprinted poster filenames
+ensure newly uploaded videos receive fresh covers.
