@@ -24,14 +24,13 @@ The included JPGs and short MP4s are working placeholders; no HTML edits are nee
 | Homepage hero, new photograph 3 | `images/collage-15.jpg` |
 
 Export MP4s with H.264 video and AAC audio for browser compatibility. Landscape
-footage is recommended; players use a 16:9 frame. Videos have native playback, volume, and fullscreen
+footage is recommended; players use a fixed 150 × 100 pixel frame. Videos have native playback, volume, and fullscreen
 controls and play only when visitors choose. Existing photos remain as posters;
 `preload="none"` avoids downloading all seven films on page load.
 
-The pop-up collage shows one large film beside two smaller films on desktop,
-a full-width film above two films on tablets, and three stacked films on phones.
+The pop-up and Cultural Diplomacy players use small fixed frames that wrap
+onto another row on narrow screens. Their dimensions stay unchanged during playback.
 The three new hero JPG placeholders are decorative, like the existing hero photos.
 
-Our Story uses a compact video beside the story text on desktop and stacks on
-mobile. Cultural Diplomacy has three equal video slots, stacked on mobile.
+Our Story stays beside the story text on desktop and mobile.
 The latest event is a photograph only; `videos/latest-event.mp4` is no longer used.
