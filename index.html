@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=portrait-players-5">
+  <link rel="stylesheet" href="style.css?v=work-background-6">
 </head>
 <body class="home-page">
 <header><div class="container"><nav>
@@ -74,7 +74,7 @@
     <!-- POP-UP IMAGE: replace with a real embassy/fashion-show/pop-up photograph -->
     <div class="image">
       <img src=images/exhibition.jpg>
-      <span class="image-label">At the Indian and Pakistan Embassy in the USA</span>
+      <span class="image-label">At the Indian and Pakistan Embassies in the USA</span>
     </div>
     <div class="copy">
       <div class="eyebrow">In the room</div>
@@ -83,9 +83,22 @@
     </div>
   </section>
 
-  <section id="work" class="container">
+  <section id="work" class="dark diplomacy-scene work-scene" aria-labelledby="work-title">
+    <div class="diplomacy-background" aria-hidden="true">
+      <video class="background-film" width="180" height="320" autoplay muted loop playsinline preload="metadata" tabindex="-1" poster="images/video-posters/pop-up-01.0b85f3988ca3.webp">
+        <source src="videos/pop-up-01.mp4" type="video/mp4">
+      </video>
+      <video class="background-film" width="180" height="320" autoplay muted loop playsinline preload="metadata" tabindex="-1" poster="images/video-posters/pop-up-02.c8f1a4403005.webp">
+        <source src="videos/pop-up-02.mp4" type="video/mp4">
+      </video>
+      <video class="background-film" width="180" height="320" autoplay muted loop playsinline preload="metadata" tabindex="-1" poster="images/video-posters/pop-up-03.f1d3b3b3d464.webp">
+        <source src="videos/pop-up-03.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="diplomacy-shade" aria-hidden="true"></div>
+    <div class="container diplomacy-copy">
     <div class="section-label">Our work</div>
-    <h2>Culture with<br>a point of view.</h2>
+    <h2 id="work-title">Culture with a Point of View.</h2>
     <p class="lede">We create tailored formats for people who believe craft is both cultural expression and economic possibility.</p>
     <div class="work-grid">
       <article class="work-item"><span class="num">01</span><h3>Pop-ups</h3><p>Gatherings that bring makers, stories, and audiences into the same room—from embassies and fashion events to private and cultural spaces.</p></article>
@@ -93,24 +106,7 @@
       <article class="work-item"><span class="num">03</span><h3>Export & Trade</h3><p>Practical pathways that help craft-led businesses meet international markets with care.</p></article>
       <article class="work-item"><span class="num">04</span><h3>Cultural Exchange</h3><p>Conversations and projects connecting communities, institutions, and markets across the U.S. and South Asia.</p></article>
     </div>
-  </section>
-
-  <section class="container popup-experiences" aria-labelledby="popup-title">
-    <div class="section-label">In the room</div>
-    <h2 id="popup-title">Pop-up Experiences</h2>
-    <div class="video-collage">
-      <video class="film" width="180" height="320" autoplay muted loop controls playsinline preload="metadata" poster="images/video-posters/pop-up-01.0b85f3988ca3.webp" aria-label="Pop-up experience 1">
-        <source src="videos/pop-up-01.mp4" type="video/mp4">
-        Your browser does not support embedded video. <a href="videos/pop-up-01.mp4">Download pop-up experience 1</a>.
-      </video>
-      <video class="film" width="180" height="320" autoplay muted loop controls playsinline preload="metadata" poster="images/video-posters/pop-up-02.c8f1a4403005.webp" aria-label="Pop-up experience 2">
-        <source src="videos/pop-up-02.mp4" type="video/mp4">
-        Your browser does not support embedded video. <a href="videos/pop-up-02.mp4">Download pop-up experience 2</a>.
-      </video>
-      <video class="film" width="180" height="320" autoplay muted loop controls playsinline preload="metadata" poster="images/video-posters/pop-up-03.f1d3b3b3d464.webp" aria-label="Pop-up experience 3">
-        <source src="videos/pop-up-03.mp4" type="video/mp4">
-        Your browser does not support embedded video. <a href="videos/pop-up-03.mp4">Download pop-up experience 3</a>.
-      </video>
+    <button class="btn diplomacy-toggle" type="button" aria-pressed="false">Pause background videos</button>
     </div>
   </section>
 
@@ -153,5 +149,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<script src="background-videos.js" defer></script>
 </body>
 </html>

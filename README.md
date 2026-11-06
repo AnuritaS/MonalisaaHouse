@@ -12,9 +12,9 @@ The included JPGs and short MP4s are working placeholders; no HTML edits are nee
 | Location | Upload path |
 | --- | --- |
 | Homepage latest-event photograph | `images/hero.jpg` |
-| Pop-up Experiences, large film | `videos/pop-up-01.mp4` |
-| Pop-up Experiences, second film | `videos/pop-up-02.mp4` |
-| Pop-up Experiences, third film | `videos/pop-up-03.mp4` |
+| Homepage work background film 1 | `videos/pop-up-01.mp4` |
+| Homepage work background film 2 | `videos/pop-up-02.mp4` |
+| Homepage work background film 3 | `videos/pop-up-03.mp4` |
 | Impact page, Our Story | `videos/our-story.mp4` |
 | Impact page, Cultural Diplomacy film 1 | `videos/cultural-diplomacy-01.mp4` |
 | Impact page, Cultural Diplomacy film 2 | `videos/cultural-diplomacy-02.mp4` |
@@ -23,29 +23,24 @@ The included JPGs and short MP4s are working placeholders; no HTML edits are nee
 | Homepage hero, new photograph 2 | `images/collage-14.jpg` |
 | Homepage hero, new photograph 3 | `images/collage-15.jpg` |
 
-Export MP4s with H.264 video and AAC audio for browser compatibility. Portrait
-footage suits the homepage pop-up players (180 × 320 pixels); landscape footage
-suits Our Story (up to 850 × 480 pixels). Both use native controls. Our Story plays on demand; pop-ups autoplay muted with native pause controls. Cultural Diplomacy backgrounds use portrait
-footage, muted autoplay, and video-derived covers.
+Export MP4s with H.264 video and AAC audio for browser compatibility.
 
-The homepage pop-up players use 180 × 320 pixel portrait frames that wrap
-onto another row on narrow screens. They autoplay muted, loop, and retain their dimensions during playback.
-The three new hero JPG placeholders are decorative, like the existing hero photos.
+The homepage Our Work section uses the three pop-up films as portrait video
+backgrounds behind “Culture with a Point of View.” There is no separate pop-up
+video section. These and the Impact Cultural Diplomacy backgrounds autoplay
+muted and loop, with dark overlays, pause controls, and video-derived covers.
+Reduced-motion preferences start them paused.
 
-Our Story sits beside the text on large screens and below it on smaller screens.
+Our Story uses a landscape player up to 595 × 336 pixels, 30% smaller in each
+dimension than the previous player. Its heading and body text are 20% smaller.
+It sits beside the text on desktop and below it on phones and tablets.
 The latest event is a photograph only; `videos/latest-event.mp4` is no longer used.
 
-Cultural Diplomacy uses three muted, looping, autoplay background films in 9:16
-portrait frames (side by side on desktop, vertically arranged on phones). The
-section is taller, with a dark overlay for readable text and a pause/play button.
-Reduced-motion preferences start the films paused. Browsers that block autoplay
-continue showing the video-derived cover images. Our Story uses a responsive landscape frame up to 850 × 480 pixels.
-
 Hero photos use optimized, fingerprinted WebP copies and a service worker that
-caches only those images. Originals are preserved. After uploading new collage
+caches those images plus the optimized Impact artisan hero. Originals are preserved. After uploading new collage
 JPGs, install Pillow (`python -m pip install Pillow`) and run
 `python scripts/optimize-hero.py`, then commit the generated images, index.html,
-and hero-assets.js. Changed filenames refresh the cache automatically; HTML and
+impact.html, and hero-assets.js. Changed filenames refresh the cache automatically; HTML and
 videos are never stored by this service worker. Caching requires HTTPS or localhost.
 
 Video cover images are extracted at the one-second mark from their own MP4s.

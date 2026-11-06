@@ -211,11 +211,21 @@ body.home-page .hero-collage{min-height:clamp(352px,41.6vw,480px);padding:25px 0
 
 /* Larger players retain a stable frame before and during playback. */
 .video-collage .film{width:180px;height:320px;min-width:180px;max-width:180px;min-height:320px;max-height:320px;aspect-ratio:9/16;object-fit:cover}
-.about-story .history-grid{grid-template-columns:minmax(260px,1fr) minmax(0,850px)}
-.about-story .story-film{width:100%;max-width:850px}
-.story-film .film{width:100%;height:auto;min-width:0;max-width:850px;min-height:0;max-height:none;aspect-ratio:85/48;object-fit:contain}
-@media(max-width:1000px){
+.about-story .history-grid{grid-template-columns:minmax(260px,1fr) minmax(0,595px)}
+.about-story .story-film{width:100%;max-width:595px}
+.story-film .film{width:100%;height:auto;min-width:0;max-width:595px;min-height:0;max-height:none;aspect-ratio:85/48;object-fit:contain}
+@media(max-width:800px){
  .about-story .history-grid{grid-template-columns:minmax(0,1fr)}
  .about-story .history-copy{grid-column:1;grid-row:2}
  .about-story .story-film{grid-column:1;grid-row:3}
 }
+
+/* The work introduction shares Cultural Diplomacy's moving backdrop. */
+.work-scene #work-title{white-space:nowrap;font-size:clamp(16px,4.3vw,60px)}
+.work-scene .section-label{color:#e8cfaa}
+.work-scene .work-item p{color:#f5eee5}
+.work-scene .work-grid,.work-scene .work-item{border-color:rgba(244,239,231,.35)}
+/* Reduce story typography by 20% and keep copy within its column. */
+.about-story .history-copy{font-size:clamp(19.2px,2.4vw,28px);overflow-wrap:anywhere}
+.about-story .story-heading h2{font-size:clamp(35.2px,4.8vw,60.8px)}
+@media(max-width:800px){.about-story .history-copy{font-size:16px}}

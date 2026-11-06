@@ -6,7 +6,7 @@
   <meta name="description" content="The Monalisaa House explores artisan livelihoods, women's economic opportunity, worker dignity, animal welfare, entrepreneurship, and cultural exchange.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=portrait-players-5">
+  <link rel="stylesheet" href="style.css?v=work-background-6">
 </head>
 <body class="impact-page">
 <header><div class="container"><nav>
@@ -21,7 +21,7 @@
     <p class="lede">Commerce can create opportunity, and culture can create connection. The Monalisaa House is building a platform where those ideas meet.</p>
     <!-- IMPACT HERO IMAGE: use a real image showing artisans / women working / community -->
     <div class="image hero-image">
-      <img src=images/artisan.jpg>
+      <img src="images/optimized/artisan.776545a4e157.webp" alt="South Asian artisans and makers" width="1600" height="1065" loading="eager" decoding="async">
       <span class="image-label">South Asian artisans & makers</span>
     </div>
   </section>
@@ -72,7 +72,7 @@
   <section class="history about-story" id="about-us"><div class="container history-grid">
     <div class="story-heading"><div class="eyebrow">Our story</div><h2>Some stories are stitched across generations.</h2></div>
     <div class="story-film">
-      <video class="film" width="850" height="480" controls playsinline preload="none" poster="images/video-posters/our-story.137096d6de59.webp" aria-label="Our Story — The Monalisaa House">
+      <video class="film" width="595" height="336" controls playsinline preload="none" poster="images/video-posters/our-story.137096d6de59.webp" aria-label="Our Story — The Monalisaa House">
         <source src="videos/our-story.mp4" type="video/mp4">
         Your browser does not support embedded video. <a href="videos/our-story.mp4">Download Our Story</a>.
       </video>
@@ -125,25 +125,13 @@
     <div class="legal-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="cookies.html">Cookie Policy</a></div>
   </div>
 </div></footer>
+<script src="background-videos.js" defer></script>
 <script>
-(() => {
-  const videos = [...document.querySelectorAll('.background-film')];
-  const button = document.querySelector('.diplomacy-toggle');
-  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = motion.matches;
-  function update() {
-    videos.forEach(video => {
-      video.muted = true;
-      if (paused) video.pause();
-      else video.play().catch(() => {});
-    });
-    button.textContent = paused ? 'Play background videos' : 'Pause background videos';
-    button.setAttribute('aria-pressed', String(paused));
-  }
-  button.addEventListener('click', () => { paused = !paused; update(); });
-  motion.addEventListener('change', event => { paused = event.matches; update(); });
-  update();
-})();
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(() => {});
+  });
+}
 </script>
 </body>
 </html>

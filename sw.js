@@ -1,4 +1,4 @@
-/* Cache only optimized hero photos; pages and videos keep their normal loading. */
+/* Cache optimized homepage and Impact hero photos; pages and videos keep their normal loading. */
 importScripts('./hero-assets.js');
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(HERO_CACHE).then(cache => cache.addAll(HERO_ASSETS)).then(() => self.skipWaiting()));
